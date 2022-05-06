@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../store/cart/cart.slice";
+import ButtonContainer from "./ButtonContainer";
+import ComponentContainer from "./ComponentContainer";
 
 const Counter = () => {
   const dispatch = useDispatch();
@@ -27,28 +29,17 @@ const Counter = () => {
   };
 
   return (
-    <div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around",
-            width: "50%",
-            height: "10rem",
-          }}
-        >
-          <button onClick={incrementHandler}>INCREMENT</button>
-          <button onClick={decrementHandler}>DECREMENT</button>
-          <button onClick={toggleHandler}>TOGGLE</button>
-          <button onClick={increaseHandler}>INCREASE by 10</button>
-          <button onClick={decreaseHandler}>DECREASE by 10</button>
-        </div>
-      </div>
-
+    <ComponentContainer>
+      <ButtonContainer>
+        <button onClick={incrementHandler}>INCREMENT</button>
+        <button onClick={decrementHandler}>DECREMENT</button>
+        <button onClick={toggleHandler}>TOGGLE</button>
+        <button onClick={increaseHandler}>INCREASE by 10</button>
+        <button onClick={decreaseHandler}>DECREASE by 10</button>
+      </ButtonContainer>
       <h1>Counter</h1>
       <p>{show && count}</p>
-    </div>
+    </ComponentContainer>
   );
 };
 
