@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
 import { userActions } from "../store/user/user.slice";
+import Button from "./Button";
 import ButtonContainer from "./ButtonContainer";
 import ComponentContainer from "./ComponentContainer";
 
@@ -20,8 +21,8 @@ const User = () => {
       <h1>User</h1>
       {user && user.name}
       <ButtonContainer>
-        <button onClick={loginHandler}>Login</button>
-        <button onClick={logoutHandler}>Logout</button>
+        <Button onClick={loginHandler}>Login</Button>
+        <Button onClick={logoutHandler}>Logout</Button>
       </ButtonContainer>
     </ComponentContainer>
   );

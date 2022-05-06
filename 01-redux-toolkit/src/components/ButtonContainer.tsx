@@ -13,7 +13,6 @@ const ButtonContainer: FC<ButtonContainerProps> = (props) => {
           flexDirection: "column",
           justifyContent: "space-around",
           width: "50%",
-          height: "10rem",
         }}
       >
         {props.children}

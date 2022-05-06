@@ -2,6 +2,7 @@ import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
 import { counterActions } from "../store/counter/counter.slice";
+import Button from "./Button";
 import ButtonContainer from "./ButtonContainer";
 import ComponentContainer from "./ComponentContainer";
 
@@ -33,11 +34,11 @@ const Counter: FC = () => {
   return (
     <ComponentContainer>
       <ButtonContainer>
-        <button onClick={incrementHandler}>INCREMENT</button>
-        <button onClick={decrementHandler}>DECREMENT</button>
-        <button onClick={toggleHandler}>TOGGLE</button>
-        <button onClick={increaseHandler}>INCREASE by 10</button>
-        <button onClick={decreaseHandler}>DECREASE by 10</button>
+        <Button onClick={incrementHandler}>INCREMENT</Button>
+        <Button onClick={decrementHandler}>DECREMENT</Button>
+        <Button onClick={toggleHandler}>TOGGLE</Button>
+        <Button onClick={increaseHandler}>INCREASE by 10</Button>
+        <Button onClick={decreaseHandler}>DECREASE by 10</Button>
       </ButtonContainer>
       <h1>Counter</h1>
       <p>{show && count}</p>
