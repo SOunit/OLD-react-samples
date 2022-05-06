@@ -1,12 +1,14 @@
+import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { counterActions } from "../store/cart/cart.slice";
+import { RootState } from "../store";
+import { counterActions } from "../store/counter/counter.slice";
 import ButtonContainer from "./ButtonContainer";
 import ComponentContainer from "./ComponentContainer";
 
-const Counter = () => {
+const Counter: FC = () => {
   const dispatch = useDispatch();
-  const count = useSelector((state) => state.counter.counter);
-  const show = useSelector((state) => state.counter.showCounter);
+  const count = useSelector((state: RootState) => state.counter.counter);
+  const show = useSelector((state: RootState) => state.counter.showCounter);
 
   const incrementHandler = () => {
     dispatch(counterActions.increment());

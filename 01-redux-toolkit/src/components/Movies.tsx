@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store";
 import { fetchMovies } from "../store/movies/movies.actions";
 import ButtonContainer from "./ButtonContainer";
 import ComponentContainer from "./ComponentContainer";
 
 const Movies = () => {
-  const movies = useSelector((state) => state.movies.movies);
-  const isLoading = useSelector((state) => state.movies.isLoading);
+  const movies = useSelector((state: RootState) => state.movies.movies);
+  const isLoading = useSelector((state: RootState) => state.movies.isLoading);
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -1,6 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+export type Movie = {
+  title: string;
+};
+
+export type MoviesState = {
+  movies: Movie[];
+  isLoading: boolean;
+  error: Error | null;
+};
+
+const initialState: MoviesState = {
   movies: [],
   isLoading: false,
   error: null,

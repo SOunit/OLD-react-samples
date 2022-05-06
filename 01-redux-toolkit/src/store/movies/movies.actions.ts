@@ -1,8 +1,11 @@
 import axios from "axios";
+import { Dispatch } from "react";
 import { moviesActions } from "./movies.slice";
 
 export const fetchMovies = () => {
-  return async (dispatch) => {
+  return async (
+    dispatch: Dispatch<ReturnType<typeof moviesActions.setIsLoading>>
+  ) => {
     dispatch(moviesActions.setIsLoading({ isLoading: true }));
 
     const sendRequest = async () => {

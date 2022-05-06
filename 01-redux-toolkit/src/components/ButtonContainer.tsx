@@ -1,4 +1,10 @@
-const ButtonContainer = (props) => {
+import { FC, ReactNode } from "react";
+
+type ButtonContainerProps = {
+  children: ReactNode;
+};
+
+const ButtonContainer: FC<ButtonContainerProps> = (props) => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div

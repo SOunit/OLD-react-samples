@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store";
 import { userActions } from "../store/user/user.slice";
 import ButtonContainer from "./ButtonContainer";
 import ComponentContainer from "./ComponentContainer";
 
 const User = () => {
-  const user = useSelector((state) => state.user.user);
+  const user = useSelector((state: RootState) => state.user.user);
   const dispatch = useDispatch();
 
   const loginHandler = () => {

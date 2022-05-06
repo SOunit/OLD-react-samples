@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { counterReducer } from "./cart/cart.slice";
+import { counterReducer } from "./counter/counter.slice";
 import { moviesReducer } from "./movies/movies.slice";
 import { userReducer } from "./user/user.slice";
 
@@ -14,5 +14,7 @@ const store = configureStore({
     movies: moviesReducer,
   },
 });
+
+export type RootState = ReturnType<typeof store.getState>;
 
 export default store;
