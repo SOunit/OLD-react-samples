@@ -2,7 +2,7 @@
 
 https://www.youtube.com/watch?v=6GvMQ0vMXQU
 
-# Setup redux-saga
+# Setup redux-saga and run saga
 
 - create `sagaMiddleware`
 
@@ -13,8 +13,11 @@ const sagaMiddleware = createSagaMiddleware();
 ```
 
 - apply middleware to redux
+
   - `compose`
   - `applyMiddleware`
+
+- run saga
 
 ```
 const sagaMiddleware = createSagaMiddleware();
@@ -24,6 +27,8 @@ const store = compose(
   applyMiddleware(...middleware),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )(createStore)(reducers);
+
+sagaMiddleware.run(rootSaga);
 ```
 
 # rootSaga
